@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Cpu, Cloud, BrainCircuit, Sun, Radio, LineChart, Flame, Leaf, HeartPulse, Building2, Globe2, Trees, User } from "lucide-react";
+import { Cpu, Cloud, BrainCircuit, Sun, Radio, LineChart, Flame, Leaf, HeartPulse, Building2, Globe2, Trees, User, Mail, MapPin, CalendarDays } from "lucide-react";
 import logo from "@/assets/ignis-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -44,6 +44,13 @@ const ods = [
   { icon: Trees, n: "15", title: "Vida terrestre" },
 ];
 
+const eventos = [
+  { nome: "Bragantec", local: "Bragança Paulista" },
+  { nome: "Desafio Maker Fecap", local: "São Paulo" },
+  { nome: "FECCIF", local: "IF de Suzano" },
+  { nome: "CONICT", local: "IF de Guarulhos" },
+];
+
 function Index() {
   return (
     <main className="font-sans">
@@ -51,7 +58,7 @@ function Index() {
       <header className="sticky top-0 z-20 border-b border-border bg-background/85 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
           <a href="#inicio" className="flex items-center gap-2">
-            <img src={logo.url} alt="Logo IGNIS" className="h-10 w-10 rounded-full object-cover" />
+            <img src={logo.url} alt="Logo IGNIS" className="h-10 w-10 rounded-xl object-contain" />
             <span className="font-display text-xl font-extrabold text-primary">IGNIS</span>
           </a>
           <div className="hidden gap-6 text-sm font-medium text-muted-foreground md:flex">
@@ -60,6 +67,7 @@ function Index() {
             <a href="#projeto" className="hover:text-primary">O projeto</a>
             <a href="#futuro" className="hover:text-primary">Futuro</a>
             <a href="#impacto" className="hover:text-primary">Impacto</a>
+            <a href="#contato" className="hover:text-primary">Contato</a>
           </div>
         </nav>
       </header>
@@ -73,15 +81,18 @@ function Index() {
               Prevenir o fogo <span className="text-flame-gradient">antes</span> que ele comece.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-primary-foreground/85">
-              Sistema inteligente de monitoramento da qualidade do ar para prevenção de queimadas.
+              As queimadas destruem florestas inteiras, poluem o ar que todos nós respiramos e agravam problemas de saúde — principalmente de crianças e idosos. O IGNIS nasceu para ajudar a mudar esse cenário.
+            </p>
+            <p className="mt-4 max-w-lg text-lg text-primary-foreground/85">
+              Desenvolvemos um sistema inteligente de monitoramento da qualidade do ar que identifica o risco de queimadas antes que elas aconteçam, protegendo a natureza e as pessoas.
             </p>
             <a href="#projeto" className="mt-8 inline-block rounded-full bg-flame px-7 py-3 font-semibold text-accent-foreground shadow-soft transition hover:scale-105">
               Conheça o projeto
             </a>
           </div>
           <div className="flex justify-center">
-            <div className="rounded-full bg-card p-6 shadow-soft">
-              <img src={logo.url} alt="Logo do projeto IGNIS" className="h-64 w-64 rounded-full object-contain md:h-80 md:w-80" />
+            <div className="rounded-3xl bg-card p-6 shadow-soft">
+              <img src={logo.url} alt="Logo do projeto IGNIS" className="h-64 w-64 rounded-3xl object-contain md:h-80 md:w-80" />
             </div>
           </div>
         </div>
@@ -174,6 +185,46 @@ function Index() {
               <p className="mt-1 text-sm font-medium">{o.title}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Agenda */}
+      <section id="agenda" className="bg-secondary">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <SectionTitle kicker="Onde nos encontrar" title="Onde estaremos apresentando" />
+          <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-muted-foreground">
+            O IGNIS estará em destaque nos seguintes eventos e feiras de ciência:
+          </p>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {eventos.map((e) => (
+              <div key={e.nome} className="rounded-3xl border border-border bg-card p-7 text-center shadow-soft">
+                <CalendarDays className="mx-auto h-8 w-8 text-flame" />
+                <h3 className="mt-4 font-display text-lg font-bold">{e.nome}</h3>
+                <p className="mt-2 flex items-center justify-center gap-1.5 text-sm font-medium text-muted-foreground">
+                  <MapPin className="h-4 w-4 text-leaf" /> {e.local}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contato */}
+      <section id="contato" className="mx-auto max-w-6xl px-6 py-24">
+        <SectionTitle kicker="Fale com a gente" title="Entre em contato" />
+        <div className="mx-auto mt-12 max-w-2xl rounded-3xl border border-border bg-card p-10 text-center shadow-soft">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary">
+            <Mail className="h-7 w-7 text-primary" />
+          </div>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Quer saber mais sobre o projeto, propor uma parceria ou convidar o IGNIS para um evento? Escreva para a gente:
+          </p>
+          <a
+            href="mailto:oprojetoignis@gmail.com"
+            className="mt-6 inline-block rounded-full bg-flame px-7 py-3 font-semibold text-accent-foreground shadow-soft transition hover:scale-105"
+          >
+            oprojetoignis@gmail.com
+          </a>
         </div>
       </section>
 

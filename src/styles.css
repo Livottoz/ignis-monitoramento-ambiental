@@ -4,6 +4,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility bg-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility text-flame-gradient {
+  background-image: var(--gradient-flame);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
 /*
  * Design system definition.
  *
