@@ -58,7 +58,7 @@ function Index() {
       <header className="sticky top-0 z-20 border-b border-border bg-background/85 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
           <a href="#inicio" className="flex items-center gap-2">
-            <img src={logo.url} alt="Logo IGNIS" className="h-10 w-10 rounded-full object-cover" />
+            <img src={logo.url} alt="Logo IGNIS" className="h-10 w-10 rounded-xl object-contain" />
             <span className="font-display text-xl font-extrabold text-primary">IGNIS</span>
           </a>
           <div className="hidden gap-6 text-sm font-medium text-muted-foreground md:flex">
