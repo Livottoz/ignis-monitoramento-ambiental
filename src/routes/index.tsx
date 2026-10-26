@@ -201,7 +201,7 @@ function Index() {
           <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-muted-foreground">
             O IGNIS estará em destaque nos seguintes eventos e feiras de ciência:
           </p>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {eventos.map((e) => (
               <div key={e.nome} className="rounded-3xl border border-border bg-card p-7 text-center shadow-soft">
                 <CalendarDays className="mx-auto h-8 w-8 text-flame" />
