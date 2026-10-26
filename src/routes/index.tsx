@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Cpu, Cloud, BrainCircuit, Sun, Radio, LineChart, Flame, Leaf, HeartPulse, Building2, Globe2, Trees, Mail, MapPin, CalendarDays } from "lucide-react";
-import logo from "@/assets/ignis-logo.png.asset.json";
-import fotoAndre from "@/assets/foto-andre.png.asset.json";
-import fotoLarissa from "@/assets/foto-larissa.png.asset.json";
-import fotoNicole from "@/assets/foto-nicole.png.asset.json";
+const logo = { url: "/images/ignis-logo.png" };
+const fotoAndre = { url: "/images/foto-andre.png" };
+const fotoLarissa = { url: "/images/foto-larissa.png" };
+const fotoNicole = { url: "/images/foto-nicole.png" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
