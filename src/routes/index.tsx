@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Cpu, Cloud, BrainCircuit, Sun, Radio, LineChart, Flame, Leaf, HeartPulse, Building2, Globe2, Trees, User, Mail, MapPin, CalendarDays } from "lucide-react";
+import { Cpu, Cloud, BrainCircuit, Sun, Radio, LineChart, Flame, Leaf, HeartPulse, Building2, Globe2, Trees, Mail, MapPin, CalendarDays } from "lucide-react";
 import logo from "@/assets/ignis-logo.png.asset.json";
+import fotoAndre from "@/assets/foto-andre.png.asset.json";
+import fotoLarissa from "@/assets/foto-larissa.png.asset.json";
+import fotoNicole from "@/assets/foto-nicole.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,9 +20,9 @@ export const Route = createFileRoute("/")({
 });
 
 const team = [
-  { name: "Larissa de Oliveira Motta", role: "Estudante pesquisadora" },
-  { name: "Nicole Militão Livotto", role: "Estudante pesquisadora" },
-  { name: "Prof. Me. André Luís Bordignon", role: "Orientador" },
+  { name: "Larissa de Oliveira Motta", role: "Estudante pesquisadora", photo: fotoLarissa },
+  { name: "Nicole Militão Livotto", role: "Estudante pesquisadora", photo: fotoNicole },
+  { name: "Prof. Me. André Luís Bordignon", role: "Orientador", photo: fotoAndre },
 ];
 
 const features = [
@@ -45,6 +48,7 @@ const ods = [
 ];
 
 const eventos = [
+  { nome: "Mostratec", local: "Rio Grande do Sul" },
   { nome: "Bragantec", local: "Bragança Paulista" },
   { nome: "Desafio Maker Fecap", local: "São Paulo" },
   { nome: "FECCIF", local: "IF de Suzano" },
@@ -104,9 +108,11 @@ function Index() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((m) => (
             <div key={m.name} className="rounded-3xl border border-border bg-card p-8 text-center shadow-soft">
-              <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-4 border-dashed border-leaf/50 bg-secondary">
-                <User className="h-16 w-16 text-leaf" aria-label="Espaço para foto" />
-              </div>
+              <img
+                src={m.photo.url}
+                alt={`Foto de ${m.name}`}
+                className="mx-auto h-40 w-40 rounded-full border-4 border-leaf/40 object-cover shadow-soft"
+              />
               <h3 className="mt-6 font-display text-lg font-bold">{m.name}</h3>
               <p className="mt-1 text-sm font-medium text-flame">{m.role}</p>
             </div>
